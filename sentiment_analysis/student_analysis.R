@@ -7,8 +7,15 @@ library(syuzhet)
 # Add some happy ones, angry ones - you name it!
 student_sentences <- c('I really like the pie you gave me this morning.', 
                        'Your shoes suck and are just plain ugly.',
-                       'I\'d really truly love going out in this weather!'
+                       'I\'d really truly love going out in this weather!',
+                       'I/m so glad we\'re here today!',
+                       'Andrew and Michelle\'s presentation was so good!',
+                       'The weather makes me feel so hungry'
                        )
 
 # Analyze sentiment for student sentences
-
+student_sentiments <- data.fram(get_sentiment(student_sentences,
+                                              method='syuzhet'))
+student_analysis <- child(sentance = student_sentences,
+                          student_sentiments)
+View(student_analysis)
